@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script> 
+                    var myChart = echarts.init(document.getElementById('main'));
+                    myChart.setOption({
+                        baseOption: {
+                "timeline": {
+                    //loop: false,        
+                    "axisType": "category",
+                    "show": true,
+                    "autoPlay": true,
+                    "playInterval": 1500,
+                    "data" : ["2014", "2015", "2016"]
+                },
+                "grid": {
+                    "containLabel": true
+                },
+                "xAxis": [{
+                    "type" : "value",
+                    "name": "法治指數",
+                    "max": 1
+                }, ],
+                "yAxis": [{
+                    "type": "category",
+                    "inverse": true,
+                }],
+                "series": [{
+                    "type": "bar",
+                }, ]
+            },
+            //变量则写在options中
+                    options: [
+                                {
+                                    "yAxis": [{
+                                        "data": ["香港","日本","澳洲","美國","中國"]
+                                    }],
+                                    "title": {
+                                        "text": "2014全球公義計劃的法治指數-整體分數"
+                                    },
+                                    "series": [{
+                                            "data": [-0.76,-0.78,-0.80,-0.71,-0.45]
+                                        },
+                                    ]
+                                },
+                                {
+                                    "yAxis": [{
+                                        "data": ["香港","日本","澳洲","美國","中國"]
+                                    }],
+                                    "title": {
+                                        "text": "2015全球公義計劃的法治指數-整體分數"
+                                    },
+                                    "series": [{
+                                            "data": [0.76,0.78,0.80,0.73,0.48]
+                                        },
+                                    ]
+                                },
+                                {
+                                    "yAxis": [{
+                                        "data": ["香港","日本","澳洲","美國","中國"]
+                                    }],
+                                    "title": {
+                                        "text": "2016全球公義計劃的法治指數-整體分數"
+                                    },
+                                    "series": [{
+                                            "data": [0.77,0.78,0.81,0.74,0.48]
+                                        },
+                                    ]
+                                },
+                            
+                            ]
+                        });
+    
+                    </script>
+</body>
+</html>
